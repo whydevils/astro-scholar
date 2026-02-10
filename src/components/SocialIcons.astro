@@ -1,0 +1,55 @@
+---
+import { SITE_DATA } from '../constants';
+
+interface Props {
+  size?: number;
+  gap?: string;
+  class?: string;
+  twitter?: string;
+  linkedin?: string;
+  scholar?: string;
+  email?: string;
+}
+
+const { 
+  size = 24, 
+  gap = "1.5rem",
+  class: className,
+  twitter = SITE_DATA.twitter,
+  linkedin = SITE_DATA.linkedin,
+  scholar = SITE_DATA.scholar,
+  email = SITE_DATA.email
+} = Astro.props;
+---
+
+<div class:list={["social-icons", className]} style={{ gap }}>
+  {linkedin && (
+    <a href={`https://linkedin.com/in/${linkedin}`} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.4 1.08 3.4 3.93z"></path>
+      </svg>
+    </a>
+  )}
+  {twitter && (
+    <a href={`https://twitter.com/${twitter}`} aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+      </svg>
+    </a>
+  )}
+  {scholar && (
+    <a href={`https://scholar.google.com/citations?user=${scholar}`} aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+        <path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path>
+        <path d="M19 11v6c0 1.66-3.13 3-7 3s-7-1.34-7-3v-6l7 3 7-3z"></path>
+      </svg>
+    </a>
+  )}
+  {email && (
+    <a href={`mailto:${email}`} aria-label="Email">
+      <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+      </svg>
+    </a>
+  )}
+</div>

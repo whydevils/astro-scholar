@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import { SITE_DATA } from '../constants';
+import portraitImage from '../assets/portrait.svg';
+
+import '../styles/about.css';
+
+// ============================================================================
+// CUSTOMIZATION GUIDE
+// ============================================================================
+// This is the About page of your academic website. To customize:
+// 1. Update the intro paragraph with your background and interests
+// 2. Replace work experience items with your positions
+// 3. Update education section with your degrees
+// 4. The portrait image is loaded from src/assets/portrait.svg (replace with your own)
+// 5. Contact information automatically uses data from src/constants.ts
+---
+
+<Layout pageTitle="About">
+    <div class="page-container">
+        <h1>About me</h1>
+
+        <div class="about-content">
+            <div class="about-intro-wrapper centered-column">
+                <div class="about-header centered-column">
+                    <Image src={portraitImage} alt={SITE_DATA.name} class="about-portrait" />
+                    <h2 class="about-name">{SITE_DATA.name}</h2>
+                </div>
+
+                <p class="intro-text">
+                    I am a <strong>physical chemist</strong> and <strong>X-ray crystallographer</strong> whose research
+                    fundamentally shaped our understanding of molecular structures. My work produced the critical X-ray
+                    diffraction images that revealed the helical structure of DNA, most notably <strong>Photo 51</strong>,
+                    which provided the key evidence for the double helix model. Beyond DNA, I made pioneering contributions
+                    to understanding the molecular structures of viruses and coal. My commitment to rigorous experimental
+                    methodology and precise interpretation of data exemplifies the highest standards of scientific inquiry.
+                </p>
+            </div>
+
+            <section>
+                <h2>Research & Positions</h2>
+                <ul class="work-list icon-list">
+                    <li>
+                        <div class="list-entry">
+                            <h3>Research Scientist</h3>
+                            <p class="institution">Birkbeck College, University of London, 1953-1958</p>
+                            <p>Led groundbreaking research on the molecular structure of viruses, particularly the tobacco mosaic
+                            virus and polio virus. My work established fundamental principles of virus structure and assembly,
+                            demonstrating that viruses could be studied as crystalline materials. This research opened new avenues
+                            for understanding viral diseases.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Research Associate</h3>
+                            <p class="institution">King's College London, 1951-1953</p>
+                            <p>Conducted pioneering X-ray diffraction studies of DNA fibers that produced the famous "Photo 51,"
+                            the clearest image of DNA structure obtained to date. My meticulous experimental work and mathematical
+                            analysis demonstrated the helical nature of DNA and provided crucial measurements of its dimensions.
+                            This work was foundational to understanding the molecular basis of heredity, though my contributions
+                            were not properly acknowledged during my lifetime.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Research Officer</h3>
+                            <p class="institution">British Coal Utilisation Research Association, 1942-1947</p>
+                            <p>Investigated the physical structure of coals and carbonized coals, work that earned my doctorate.
+                            My research clarified the relationship between coal structure and its properties, contributing to
+                            improved industrial applications. This early work established my expertise in X-ray crystallography
+                            and materials science.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-entry">
+                            <h3>Postdoctoral Researcher</h3>
+                            <p class="institution">Laboratoire Central des Services Chimiques de l'État, Paris, 1947-1950</p>
+                            <p>Advanced my X-ray diffraction techniques and applied them to the study of carbon structures.
+                            Mastered the use of X-ray crystallography for analyzing complex molecular arrangements, skills
+                            that would prove essential for my later DNA work.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <ul class="education-list icon-list">
+                    <li>
+                        <div class="education-entry">
+                            <h3>PhD in Physical Chemistry</h3>
+                            <p class="institution">University of Cambridge, 1945</p>
+                            <p class="grade">Thesis: "The Physical Chemistry of Solid Organic Colloids with Special Reference to Coal"</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="education-entry">
+                            <h3>BA in Natural Sciences (Chemistry)</h3>
+                            <p class="institution">Newnham College, Cambridge University, 1941</p>
+                            <p class="grade">Second Class Honours - women were not granted full degrees at this time</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="education-entry">
+                            <h3>Secondary Education</h3>
+                            <p class="institution">St Paul's Girls' School, London, 1930s</p>
+                            <p class="grade">Excelled in science and mathematics from an early age</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CV</h2>
+                <div class="info-card">
+                    <p>
+                        For more information about my work and contributions:
+                    </p>
+                    <a href={`https://linkedin.com/in/${SITE_DATA.linkedin}`}
+                       class="info-card-link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Visit my LinkedIn profile">
+                        <svg viewBox="0 0 24 24" width="60" height="60" fill="currentColor">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.4 1.08 3.4 3.93z"></path>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <p>
+                    If you'd like to reach out, send me an <a href={`mailto:${SITE_DATA.email}`}>e-mail</a> or connect via <a href={`https://linkedin.com/in/${SITE_DATA.linkedin}`} target="_blank" rel="noopener noreferrer">social media</a>.
+                </p>
+            </section>
+        </div>
+    </div>
+</Layout>

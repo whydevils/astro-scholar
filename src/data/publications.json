@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Molecular Configuration in Sodium Thymonucleate",
+    "authors": "Rosalind E. Franklin, R. G. Gosling",
+    "journal": "Nature",
+    "year": 1953,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "This paper presents X-ray diffraction evidence for the helical structure of DNA. Our studies of DNA fibers reveal that the structure has two distinct forms (A and B), with the B form showing clear helical characteristics. The diffraction patterns demonstrate that the phosphate groups lie on the outside of the structural unit, and our measurements provide critical dimensions of the DNA molecule. This work provides direct experimental evidence for the helical nature of DNA.",
+    "doi": "10.1038/171740a0",
+    "publicationType": "Journal"
+  },
+  {
+    "id": 2,
+    "title": "Evidence for 2-Chain Helix in Crystalline Structure of Sodium Deoxyribonucleate",
+    "authors": "Rosalind E. Franklin, R. G. Gosling",
+    "journal": "Nature",
+    "year": 1953,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "We present definitive X-ray crystallographic evidence that DNA exists as a two-chain helix. Our analysis of high-resolution diffraction photographs, including the famous Photo 51, demonstrates the helical arrangement and provides precise measurements of the helix dimensions. This work establishes the structural foundation for understanding DNA's role in heredity.",
+    "doi": "10.1038/171740b0",
+    "publicationType": "Journal"
+  },
+  {
+    "id": 3,
+    "title": "Structure of Tobacco Mosaic Virus",
+    "authors": "Rosalind E. Franklin",
+    "journal": "Nature",
+    "year": 1955,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "This research establishes the fundamental architecture of the tobacco mosaic virus (TMV) using X-ray diffraction analysis. We demonstrate that TMV has a helical structure with RNA embedded within a protein coat. This work pioneers the application of crystallographic methods to virus structure determination and reveals universal principles of viral assembly.",
+    "doi": "10.1038/175379a0",
+    "publicationType": "Journal"
+  },
+  {
+    "id": 4,
+    "title": "The Structure of Viruses as Determined by X-Ray Diffraction",
+    "authors": "Rosalind E. Franklin, Kenneth C. Holmes, Aaron Klug",
+    "journal": "Ciba Foundation Symposium on The Nature of Viruses",
+    "year": 1957,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "We present a comprehensive analysis of virus structure determination using X-ray crystallography. Our work on multiple virus types reveals common structural principles and demonstrates that viruses can be understood as highly organized molecular assemblies. This research establishes X-ray diffraction as an essential tool for virology and provides insights into viral infection mechanisms.",
+    "doi": "",
+    "publicationType": "Conference"
+  },
+  {
+    "id": 5,
+    "title": "The Physical Chemistry of Solid Organic Colloids with Special Reference to Coal",
+    "authors": "Rosalind E. Franklin",
+    "journal": "PhD Thesis, University of Cambridge",
+    "year": 1945,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "This doctoral research investigates the microstructure of coals and carbonized coals using physical chemistry methods. The work elucidates the relationship between coal structure and its physical properties, demonstrating how molecular arrangement affects material behavior. This foundational research established methodologies that would later prove essential for X-ray crystallographic studies of biological molecules.",
+    "doi": "",
+    "publicationType": "Thesis"
+  },
+  {
+    "id": 6,
+    "title": "Crystallite Growth in Graphitizing and Non-Graphitizing Carbons",
+    "authors": "Rosalind E. Franklin",
+    "journal": "Proceedings of the Royal Society A",
+    "year": 1951,
+    "link": "https://en.wikipedia.org/wiki/Rosalind_Franklin",
+    "authorship": "first",
+    "abstract": "This paper analyzes the structural transformations that occur during carbonization and graphitization processes. Using X-ray diffraction techniques, we characterize how carbon crystallites grow and organize under different conditions. This work advances understanding of carbon materials and demonstrates the power of X-ray methods for studying structural changes in solids.",
+    "doi": "10.1098/rspa.1951.0197",
+    "publicationType": "Journal"
+  }
+]

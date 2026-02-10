@@ -1,0 +1,48 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_DATA } from '../constants';
+
+import '../styles/global.css';
+
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/jpg" href="/images/portrait.jpg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{SITE_DATA.name}{pageTitle ? ` | ${pageTitle}` : ""}</title>
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+		
+			if (theme === 'light') {
+				document.documentElement.removeAttribute('data-theme');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'dark');
+			}
+			window.localStorage.setItem('theme', theme);
+		</script>
+	</head>
+	<body>
+	    <Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<script>
+		  import "../scripts/menu.js";
+		</script>
+	</body>
+</html>
