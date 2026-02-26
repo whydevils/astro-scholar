@@ -15,6 +15,7 @@ export const SITE_DATA = {
     // Set to empty string "" if you don't use that platform
     twitter: "rosalind_franklin",
     linkedin: "rosalind-franklin",
+    github: "whydevils",
 
     // Google Scholar ID (found in your Scholar profile URL)
     // Example: https://scholar.google.com/citations?user=YOUR_ID_HERE
