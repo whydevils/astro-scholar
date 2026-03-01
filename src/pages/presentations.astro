@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout pageTitle="Presentations">
@@ -17,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
             <h2>Keynote Addresses</h2>
             <ul class="custom-list">
                 <li>
-                    <a class="list-item-title" href="/presentations/hoot-purr-overlap-zone.html">
+                    <a class="list-item-title" href={`${base}presentations/hoot-purr-overlap-zone.html`}>
                         The Hoot-Purr Overlap Zone: Acoustic Convergence Across Biological Kingdoms
                     </a>
                     <span class="list-item-description">
@@ -28,7 +29,7 @@ import Layout from '../layouts/Layout.astro';
                     </span>
                 </li>
                 <li>
-                    <a class="list-item-title" href="/presentations/soft-matter-hard-science.html">
+                    <a class="list-item-title" href={`${base}presentations/soft-matter-hard-science.html`}>
                         Soft Matter, Hard Science: Redefining Biomechanical Parameters for Fluffy Systems
                     </a>
                     <span class="list-item-description">

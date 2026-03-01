@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
 <div id="main-menu" class="navigation">
@@ -9,10 +10,10 @@
         </svg>
     </button>
     <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/publications/">Publications</a>
-        <a href="/presentations/">Presentations</a>
-        <a href="/blog/">Blog</a>
+        <a href={base}>Home</a>
+        <a href={`${base}about/`}>About</a>
+        <a href={`${base}publications/`}>Publications</a>
+        <a href={`${base}presentations/`}>Presentations</a>
+        <a href={`${base}blog/`}>Blog</a>
     </div>
 </div>
