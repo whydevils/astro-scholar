@@ -74,7 +74,9 @@ Post content here.
 
 Tags become clickable filters on the blog index. Keep them lowercase and hyphenated, and reuse them across posts so the filter is useful.
 
-Images go in `public/images/blog/` and are referenced as `/images/blog/filename.png`.
+Images go in `public/images/blog/`. In markdown files you cannot use `BASE_URL`, so the path must include your base manually:
+- Root deployment (`username.github.io`): `/images/blog/filename.png`
+- Sub-path deployment (`username.github.io/repo-name`): `/repo-name/images/blog/filename.png`
 
 ### 6. Adding or removing pages
 

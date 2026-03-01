@@ -8,7 +8,7 @@ tags: ['field-notes', 'methodology', 'monoceros']
 
 I returned from the sub-alpine on October 28th with 847 GB of spectral photography, fourteen trail-signature measurements, three cracked ribs from a fall on the north-facing scree slope on day nine, and a revised opinion of the Mythical Conservation Society's definition of "adequate shelter."
 
-![Field assistants on migration watch duty, sub-alpine camp, night 7. The note reads: "Still waiting for sparkly hooves. Paws crossed. B"](/images/blog/sub-alpine-camp-2024.png)
+![Field assistants on migration watch duty, sub-alpine camp, night 7. The note reads: "Still waiting for sparkly hooves. Paws crossed. B"](/astro-scholar/images/blog/sub-alpine-camp-2024.png)
 
 The MCS defines adequate shelter as "a structure capable of withstanding prevailing weather conditions for the expected duration of field activity." I would add the clause "including weather conditions that were not prevailing when you arrived but became prevailing six hours later," which describes approximately half of all sub-alpine field campaigns and which the MCS has not, to date, incorporated into their guidelines.
 
