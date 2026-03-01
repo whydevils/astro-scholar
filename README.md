@@ -92,14 +92,20 @@ Push to `main` and GitHub Actions deploys automatically (workflow at `.github/wo
 
 **One-time setup:** in your repo go to **Settings → Pages → Build and deployment** and set the source to **GitHub Actions** (not "Deploy from a branch"). Without this, pushes will not trigger a deployment.
 
-**Recommended:** rename the repo to `your-github-username.github.io`. GitHub will serve it at `https://your-github-username.github.io` with no further configuration needed.
-
-If you keep a different repo name (such asa `astro-scholar`), the site will be at `https://your-github-username.github.io/repo-name` and you'll need to set `base` in `astro.config.mjs`:
+**Deploying to a root domain** (repo named `your-github-username.github.io`): GitHub serves the site at `https://your-github-username.github.io` with no sub-path. Leave `astro.config.mjs` as-is — no `base` needed:
 
 ```javascript
 export default defineConfig({
   site: 'https://your-github-username.github.io',
-  base: '/repo-name',
+});
+```
+
+**Deploying under a sub-path** (any other repo name, e.g. `astro-scholar`): the site will be at `https://your-github-username.github.io/repo-name`. Set `base` to match:
+
+```javascript
+export default defineConfig({
+  site: 'https://your-github-username.github.io',
+  base: '/repo-name/',
 });
 ```
 
