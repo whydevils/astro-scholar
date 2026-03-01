@@ -94,7 +94,9 @@ Push to `main` and GitHub Actions deploys automatically (workflow at `.github/wo
 
 **One-time setup:** in your repo go to **Settings → Pages → Build and deployment** and set the source to **GitHub Actions** (not "Deploy from a branch"). Without this, pushes will not trigger a deployment.
 
-**Deploying to a root domain** (repo named `your-github-username.github.io`): GitHub serves the site at `https://your-github-username.github.io` with no sub-path. Leave `astro.config.mjs` as-is — no `base` needed:
+Edit `astro.config.mjs` to match your deployment URL:
+
+**Root domain** (repo named `your-github-username.github.io` → `https://your-github-username.github.io`):
 
 ```javascript
 export default defineConfig({
@@ -102,7 +104,7 @@ export default defineConfig({
 });
 ```
 
-**Deploying under a sub-path** (any other repo name, e.g. `astro-scholar`): the site will be at `https://your-github-username.github.io/repo-name`. Set `base` to match:
+**Sub-path** (any other repo name → `https://your-github-username.github.io/repo-name`):
 
 ```javascript
 export default defineConfig({
@@ -145,4 +147,4 @@ public/
 
 MIT — see [LICENSE](LICENSE).
 
-Created by [whydevils](https://github.com/whydevils). If you use this template, a star on GitHub is appreciated ⭐
+Created by [whydevils](https://github.com/whydevils).
