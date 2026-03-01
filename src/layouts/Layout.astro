@@ -5,7 +5,8 @@ import { SITE_DATA } from '../constants';
 
 import '../styles/global.css';
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description = SITE_DATA.description } = Astro.props;
+const title = `${SITE_DATA.name}${pageTitle ? ` | ${pageTitle}` : ""}`;
 ---
 
 <!doctype html>
@@ -15,7 +16,11 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/jpg" href="/images/portrait.jpg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{SITE_DATA.name}{pageTitle ? ` | ${pageTitle}` : ""}</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
 		<script is:inline>
 			const theme = (() => {
 				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {

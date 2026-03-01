@@ -15,7 +15,7 @@ const postFiles = import.meta.glob<{ frontmatter: Post }>('./*.md', { eager: tru
 const sorted: Post[] = Object.entries(postFiles)
     .map(([path, mod]) => ({
         ...mod.frontmatter,
-        url: '/blog/' + path.replace('./', '').replace('.md', '') + '/',
+        url: `${import.meta.env.BASE_URL}blog/` + path.replace('./', '').replace('.md', '') + '/',
     }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

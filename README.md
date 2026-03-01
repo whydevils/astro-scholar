@@ -1,5 +1,7 @@
 # Astro Scholar
 
+**[Live demo](https://whydevils.github.io/astro-scholar)**
+
 An academic website template built with [Astro](https://astro.build). Pages for publications, presentations, and a blog — all editable as plain files.
 
 ## Getting started
@@ -87,6 +89,8 @@ Accent colour and font are set in `src/styles/global.css`. The font is loaded fr
 ### GitHub Pages
 
 Push to `main` and GitHub Actions deploys automatically (workflow at `.github/workflows/deploy.yaml`).
+
+**One-time setup:** in your repo go to **Settings → Pages → Build and deployment** and set the source to **GitHub Actions** (not "Deploy from a branch"). Without this, pushes will not trigger a deployment.
 
 **Recommended:** rename the repo to `your-github-username.github.io`. GitHub will serve it at `https://your-github-username.github.io` with no further configuration needed.
 

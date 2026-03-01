@@ -27,4 +27,11 @@ export const SITE_DATA = {
 
     // Your email address (use [at] and [dot] to avoid spam bots)
     email: "[your-email-address]",
+
+    // One-line research tagline used for SEO and social sharing meta tags
+    description: "Your one-line research tagline for SEO and social sharing.",
+
+    // Base URL of your deployed site (no trailing slash), e.g. "https://your-username.github.io"
+    // Used for Open Graph tags. Leave empty if you haven't deployed yet.
+    siteUrl: "https://whydevils.github.io/astro-scholar/",
 };
