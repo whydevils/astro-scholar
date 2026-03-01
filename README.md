@@ -2,9 +2,10 @@
 
 **[Live demo](https://whydevils.github.io/astro-scholar)**
 
-An academic website template built with [Astro](https://astro.build). Pages for publications, presentations, and a blog — all editable as plain files.
 
-## Getting started
+Built with [Astro](https://astro.build). Simple, fast, easy to configure and extend. Pages for introduction, publications, presentations, and a blog.
+
+## 🚀 Getting started
 
 **The fastest path** is to fork this repo, edit the files listed below, and push to GitHub. The site deploys automatically to GitHub Pages — no local setup needed.
 
@@ -15,7 +16,7 @@ npm install
 npm run dev        # http://localhost:4321
 ```
 
-## What to change
+## ✏️ What to change
 
 ### 1. Your details — `src/constants.ts`
 
@@ -86,7 +87,7 @@ Any `.astro` file in `src/pages/` becomes a route. To add a page, copy an existi
 
 Accent colour and font are set in `src/styles/global.css`. The font is loaded from Google Fonts — swap the import and the `font-family` declaration to change it.
 
-## Deployment
+## 🌐 Deployment
 
 ### GitHub Pages
 
@@ -117,7 +118,7 @@ export default defineConfig({
 
 [Netlify](https://netlify.com), [Vercel](https://vercel.com), and [Cloudflare Pages](https://pages.cloudflare.com) all support Astro with minimal configuration. Or build with `npm run build` and upload `dist/` anywhere.
 
-## Project structure
+## 📁 Project structure
 
 ```
 src/
@@ -143,7 +144,7 @@ public/
 └── images/blog/              # Blog post images
 ```
 
-## License
+## 📄 License
 
 MIT — see [LICENSE](LICENSE).
 
