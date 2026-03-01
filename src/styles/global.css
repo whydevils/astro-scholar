@@ -106,7 +106,7 @@ p a:active,
 :root {
     /* Colors - Day Mode */
     --color-primary: #1a1a1a;
-    --color-accent: #6A1B9A;
+    --color-accent: #9C27B0;
     --color-text: #1a1a1a;
     --color-text-muted: #666;
     --color-bg: #fff;
@@ -499,18 +499,18 @@ body:has(.menu-toggle[aria-expanded="true"])::before {
 }
 
 @media (hover: hover) {
-    .list-item-title:hover {
+    a.list-item-title:hover {
         color: var(--color-accent);
         text-decoration: underline;
     }
 }
 
-.list-item-title:active {
+a.list-item-title:active {
     color: var(--color-accent);
     text-decoration: underline;
 }
 
-.list-item-title::after {
+a.list-item-title::after {
     content: " ↗";
     font-size: 0.9rem;
     opacity: 0.5;
@@ -520,13 +520,13 @@ body:has(.menu-toggle[aria-expanded="true"])::before {
 }
 
 @media (hover: hover) {
-    .list-item-title:hover::after {
+    a.list-item-title:hover::after {
         opacity: 1;
         transform: translate(2px, -2px);
     }
 }
 
-.list-item-title:active::after {
+a.list-item-title:active::after {
     opacity: 1;
     transform: translate(2px, -2px);
 }

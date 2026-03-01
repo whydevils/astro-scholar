@@ -1,232 +1,136 @@
 # Astro Scholar
 
-A modern, elegant academic website template built with [Astro](https://astro.build). Designed specifically for researchers, academics, and scholars to showcase their work, publications, and professional profile.
+An academic website template built with [Astro](https://astro.build). Pages for publications, presentations, and a blog — all editable as plain files.
 
-## ✨ Features
+## Getting started
 
-- **Clean, Professional Design** - Elegant serif typography (Spectral) perfect for academic content
-- **Publications Management** - Dynamic filtering by year, type (journal/conference), and authorship
-- **Responsive & Modern** - Mobile-first design that works beautifully on all devices
-- **Dark Mode** - Built-in theme toggle for comfortable reading in any environment
-- **Fast & Lightweight** - Built with Astro for optimal performance
-- **Easy to Customize** - Well-organized code with clear documentation
-- **Accessible** - Semantic HTML and ARIA labels for screen readers
-- **SEO Ready** - Proper meta tags and structure for search engines
+**The fastest path** is to fork this repo, edit the files listed below, and push to GitHub. The site deploys automatically to GitHub Pages — no local setup needed.
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 18 or higher
-- npm (comes with Node.js)
-
-### Installation
-
-1. **Clone or download this repository**
-
-```bash
-git clone https://github.com/whydevils/astro-scholar.git
-cd astro-scholar
-```
-
-2. **Install dependencies**
+If you want to preview or build locally, you'll need [Node.js 18+](https://nodejs.org/en/download):
 
 ```bash
 npm install
+npm run dev        # http://localhost:4321
 ```
 
-3. **Start the development server**
+## What to change
 
-```bash
-npm run dev
-```
+### 1. Your details — `src/constants.ts`
 
-Your site will be running at `http://localhost:4321`
+Name, tagline, and social links. Set any field to `""` to hide it.
 
-4. **Build for production**
+### 2. Portrait — `src/assets/portrait.png`
 
-```bash
-npm run build
-npm run preview  # Preview the production build locally
-```
+Replace with your own photo. Ideally square, 400×400px or larger.
 
-## 📝 Customization Guide
+### 3. Pages — `src/pages/`
 
-### 1. Site Configuration
+Each `.astro` file is a page. Edit them directly:
 
-Edit `src/constants.ts` to set your personal information:
+- `index.astro` — homepage
+- `about.astro` — bio, positions, education, awards
+- `publications.astro` — the filter UI (data is in `src/data/publications.json`)
+- `presentations.astro` — talks and slides
 
-```typescript
-export const SITE_DATA = {
-    name: "Your Name",
-    tagline: "Your Title | Research Area | Institution",
-    twitter: "your_twitter_handle",
-    linkedin: "your-linkedin-username",
-    scholar: "your_google_scholar_id",
-    email: "your.email [at] example.com",
-};
-```
-
-### 2. Profile Picture
-
-Replace `src/assets/portrait.svg` with your own photo (`.jpg`, `.png`, or keep as `.svg`). Recommended size: 400x400px or larger, square format. Using assets enables Astro's automatic image optimization. Update the import in `src/components/Hero.astro` and `src/pages/about.astro` if changing the file extension.
-
-### 3. Publications
-
-Edit `src/data/publications.json`. Each publication should have:
+### 4. Publications — `src/data/publications.json`
 
 ```json
 {
   "id": 1,
-  "title": "Your Paper Title",
-  "authors": "You, Coauthor A, Coauthor B",
-  "journal": "Journal Name or Conference",
-  "year": 2024,
-  "link": "https://link-to-paper.com",
-  "authorship": "first",  // "first", "last", or "other"
-  "abstract": "Your paper abstract...",
+  "title": "Paper Title",
+  "authors": "You, Coauthor A",
+  "journal": "Journal or Conference Name",
+  "year": 2025,
+  "link": "https://...",
+  "authorship": "first",
+  "abstract": "...",
   "doi": "10.xxxx/xxxxx",
-  "publicationType": "Journal"  // "Journal", "Conference", "Preprint", or "Thesis"
+  "publicationType": "Journal"
 }
 ```
 
-See `src/data/README.md` for detailed field descriptions.
+`authorship`: `"first"`, `"last"`, or `"other"`. Drives the authorship filter.
+`publicationType`: any string — `"Journal"`, `"Conference"`, `"Preprint"`, `"Book Chapter"`, etc. Each unique value becomes a filter button.
 
-### 4. About Page
+See `src/data/README.md` for full field details.
 
-Edit `src/pages/about.astro`:
+### 5. Blog posts — `src/pages/blog/`
 
-- Update the intro paragraph (lines 29-36)
-- Replace work experience items with your positions
-- Update education section with your degrees
-- Modify the CV/contact sections as needed
+Add a `.md` file per post:
 
-### 5. Presentations
+```markdown
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'Post Title'
+date: '2025-06-01'
+description: 'One sentence shown on the index.'
+tags: ['methodology', 'field-notes']
+---
 
-Edit `src/pages/presentations.astro` to add your talks and presentations. You can:
-
-- Link to external slides (hosted elsewhere)
-- Link to PDFs in `public/presentations/`
-- Keep as plain text entries
-
-### 6. Color Scheme
-
-The accent color (currently Material Purple) can be changed in `src/styles/global.css`:
-
-```css
-:root {
-    --color-accent: #6A1B9A;  /* Change this to your preferred color */
-}
-
-/* Also update dark mode: */
-[data-theme="dark"] {
-    --color-accent: #AB47BC;  /* Lighter shade for dark mode */
-}
+Post content here.
 ```
 
-### 7. Font
+Tags become clickable filters on the blog index. Keep them lowercase and hyphenated, and reuse them across posts so the filter is useful.
 
-To change the font, edit `src/styles/global.css`:
+Images go in `public/images/blog/` and are referenced as `/images/blog/filename.png`.
 
-1. Update the Google Fonts import (line 6)
-2. Update the font-family in the html selector (line 16)
+### 6. Adding or removing pages
 
-## 📁 Project Structure
+Any `.astro` file in `src/pages/` becomes a route. To add a page, copy an existing one and add a link in `src/components/Navigation.astro`. To remove one, delete the file and remove its nav link.
 
-```
-astro-scholar/
-├── public/
-│   ├── presentations/            # PDF files for presentations
-│   └── posters/                  # PDF files for posters
-├── src/
-│   ├── assets/
-│   │   ├── portrait.svg          # Your profile picture (replace with .jpg/.png)
-│   │   └── icons/                # SVG icons
-│   ├── components/
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   ├── Hero.astro
-│   │   ├── Navigation.astro
-│   │   ├── SocialIcons.astro
-│   │   └── ThemeToggle.astro
-│   ├── data/
-│   │   ├── publications.json     # Your publications data
-│   │   └── README.md             # Publications format guide
-│   ├── layouts/
-│   │   └── Layout.astro          # Main layout template
-│   ├── pages/
-│   │   ├── index.astro           # Homepage
-│   │   ├── about.astro           # About/CV page
-│   │   ├── publications.astro    # Publications list with filters
-│   │   ├── presentations.astro   # Talks and presentations
-│   │   └── 404.astro             # Error page
-│   ├── scripts/
-│   │   └── menu.js               # Mobile menu functionality
-│   ├── styles/
-│   │   ├── global.css            # Global styles and variables
-│   │   ├── home.css              # Homepage-specific styles
-│   │   ├── about.css             # About page styles
-│   │   └── publications.css      # Publications page styles
-│   └── constants.ts              # Site configuration
-├── astro.config.mjs              # Astro configuration
-├── package.json
-└── tsconfig.json
-```
+### 7. Colours and fonts
 
-## 🚢 Deployment
+Accent colour and font are set in `src/styles/global.css`. The font is loaded from Google Fonts — swap the import and the `font-family` declaration to change it.
+
+## Deployment
 
 ### GitHub Pages
 
-1. Update `astro.config.mjs`:
+Push to `main` and GitHub Actions deploys automatically (workflow at `.github/workflows/deploy.yaml`).
+
+**Recommended:** rename the repo to `your-github-username.github.io`. GitHub will serve it at `https://your-github-username.github.io` with no further configuration needed.
+
+If you keep a different repo name (such asa `astro-scholar`), the site will be at `https://your-github-username.github.io/repo-name` and you'll need to set `base` in `astro.config.mjs`:
 
 ```javascript
 export default defineConfig({
-  site: 'https://yourusername.github.io',
-  base: '/your-repo-name',
+  site: 'https://your-github-username.github.io',
+  base: '/repo-name',
 });
 ```
 
-2. The included GitHub Actions workflow (`.github/workflows/deploy.yaml`) will automatically deploy to GitHub Pages when you push to the main branch.
+### Other hosts
 
-### Netlify
+[Netlify](https://netlify.com), [Vercel](https://vercel.com), and [Cloudflare Pages](https://pages.cloudflare.com) all support Astro with minimal configuration. Or build with `npm run build` and upload `dist/` anywhere.
 
-1. Connect your repository to Netlify
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-4. Deploy!
+## Project structure
 
-### Vercel
+```
+src/
+├── constants.ts              # Name, tagline, social links
+├── assets/portrait.png       # Profile picture
+├── data/publications.json    # Publications
+├── pages/
+│   ├── index.astro
+│   ├── about.astro
+│   ├── publications.astro
+│   ├── presentations.astro
+│   └── blog/
+│       ├── index.astro
+│       └── *.md
+├── layouts/
+│   ├── Layout.astro
+│   └── BlogPost.astro
+├── components/
+└── styles/
+public/
+├── presentations/            # HTML slide decks
+├── posters/
+└── images/blog/              # Blog post images
+```
 
-1. Import your repository to Vercel
-2. Framework preset: Astro
-3. Deploy!
+## License
 
-### Other Hosts
+MIT — see [LICENSE](LICENSE).
 
-Build the site with `npm run build` and upload the `dist/` folder to any static hosting service.
-
-## 🛠️ Technologies Used
-
-- **[Astro](https://astro.build)** - Web framework
-- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
-- **[Spectral](https://fonts.google.com/specimen/Spectral)** - Typography (elegant serif font)
-- **CSS3** - Styling with CSS variables for theming
-- **Vanilla JavaScript** - Minimal, efficient interactivity
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-This is a template project. Feel free to fork and customize it for your needs! If you find bugs or have suggestions for improvements, please open an issue.
-
-## 🙏 Credits
-
-Created by [whydevils](https://github.com/whydevils)
-
----
-
-**Happy publishing!** 🎓
-
-If you use this template, consider giving it a star ⭐ on GitHub!
+Created by [whydevils](https://github.com/whydevils). If you use this template, a star on GitHub is appreciated ⭐

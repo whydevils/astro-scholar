@@ -6,21 +6,25 @@
 
 export const SITE_DATA = {
     // Your full name as you'd like it displayed
-    name: "Rosalind Franklin",
+    name: 'Dr. Beatrix Bumble',
 
     // A brief tagline describing your role or expertise (3-5 words/phrases)
-    tagline: "Chemist | X-ray Crystallographer | Architect of DNA's Discovery",
+    tagline: "Avian-Feline Fluff Dynamics | Lead Investigator",
 
     // Social media handles (username only, not full URL)
-    // Set to empty string "" if you don't use that platform
-    twitter: "rosalind_franklin",
-    linkedin: "rosalind-franklin",
+    // Set to empty string "" to hide an icon
+    twitter: "[your-twitter-handle]",  // bird logo → twitter.com
+    x: "",             // X logo → x.com
+
+    // Bluesky handle (without the @)
+    bluesky: "",
+    linkedin: "[your-linkedin-template]",
     github: "whydevils",
 
     // Google Scholar ID (found in your Scholar profile URL)
     // Example: https://scholar.google.com/citations?user=YOUR_ID_HERE
-    scholar: "example123",
+    scholar: "[your-scholar-id]",
 
     // Your email address (use [at] and [dot] to avoid spam bots)
-    email: "rosalind.franklin [at] example.com",
+    email: "[your-email-address]",
 };
